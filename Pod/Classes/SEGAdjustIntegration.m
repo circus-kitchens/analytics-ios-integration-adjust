@@ -102,11 +102,11 @@
 
 - (void)identify:(SEGIdentifyPayload *)payload
 {
-    if (payload.userId != nil && [payload.userId length] != 0) {
+    if (payload.userId != nil && ![payload.userId isEqual:[NSNull null]] && [payload.userId length] != 0) {
         [Adjust addSessionPartnerParameter:@"user_id" value:payload.userId];
     }
 
-    if (payload.anonymousId != nil && [payload.anonymousId length] != 0) {
+    if (payload.anonymousId != nil && ![payload.anonymousId isEqual:[NSNull null]] && [payload.anonymousId length] != 0) {
         [Adjust addSessionPartnerParameter:@"anonymous_id" value:payload.anonymousId];
     }
 }

@@ -1,3 +1,5 @@
+platform :ios, '11.0'
+
 target 'Segment-Adjust_Example' do
   pod 'Segment-Adjust', :path => '../'
 
